@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Rota Gênia em Paris - por Laura Lima</title>
+<link rel="shortcut icon" href="https://i.imgur.com/Xm6AAgt.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#F6F1E9;
+    --ivory-2:#EFE8DB;
+    --ink:#221C1A;
+    --ink-soft:#4A423C;
+    --wine:#7B2431;
+    --wine-deep:#5B1B24;
+    --sky:#7C93A3;
+    --stone:#D9D0C2;
+    --paper-line: rgba(34,28,26,0.14);
+    --maxw: 1160px;
+  }
+  
+  .centralizada {
+  display: block;
+  margin-left: 0%;
+  margin-right: 0%;
+  width: 33%; /* Defina o tamanho desejado para a imagem */
+}
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  img{max-width:100%; display:block;}
+
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    margin:0;
+    color:var(--ink);
+    letter-spacing:-0.01em;
+  }
+
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  .rule{
+    height:1px;
+    background:var(--paper-line);
+    border:none;
+    margin:0;
+  }
+
+  a{color:inherit;}
+
+  .btn{
+    display:inline-block;
+    background:var(--wine);
+    color:var(--ivory);
+    font-family:'Inter', sans-serif;
+    font-weight:600;
+    font-size:15.5px;
+    padding:16px 34px;
+    text-decoration:none;
+    border:1px solid var(--wine);
+    transition:background .25s ease, color .25s ease;
+    letter-spacing:0.01em;
+  }
+  .btn:hover{
+    background:transparent;
+    color:var(--wine);
+  }
+  .btn.light{
+    background:var(--ivory);
+    color:var(--wine);
+    border:1px solid var(--ivory);
+  }
+  .btn.light:hover{
+    background:transparent;
+    color:var(--ivory);
+    border-color:var(--ivory);
+  }
+
+  .btn-row{margin-top:34px;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:flex-end;
+    background:#1a1512;
+    overflow:hidden;
+  }
+  .hero img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:60% 20%;
+    opacity:0.92;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, rgba(20,15,13,0.15) 0%, rgba(20,15,13,0.15) 35%, rgba(20,15,13,0.86) 100%);
+  }
+  .hero-content{
+    position:relative;
+    z-index:2;
+    width:100%;
+    padding:64px 32px 72px;
+    color:var(--ivory);
+  }
+  .hero-inner{
+    max-width:var(--maxw);
+    margin:0 auto;
+  }
+  .kicker{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:19px;
+    color:var(--ivory);
+    opacity:0.9;
+    margin-bottom:18px;
+    display:flex;
+    align-items:center;
+    gap:9px;
+  }
+  .hero h1{
+    color:var(--ivory);
+    font-size:clamp(48px, 8vw, 98px);
+    line-height:0.98;
+    max-width:920px;
+  }
+  .hero-sub{
+    max-width:520px;
+    margin-top:26px;
+    font-size:18px;
+    color:var(--ivory);
+    opacity:0.92;
+  }
+
+  /* ---------- SECTION SCAFFOLD ---------- */
+  section{
+    padding:110px 0;
+  }
+  section.tight{padding:80px 0;}
+
+  .eyebrow{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    color:var(--wine);
+    font-size:19px;
+    margin-bottom:20px;
+    display:flex;
+    align-items:center;
+    gap:9px;
+  }
+  .ico{flex:none; color:inherit;}
+
+  /* ---------- ROUTE DIVIDER (motif: a dotted route from a pin to a plane) ---------- */
+  .route-divider{
+    padding:8px 0 6px;
+  }
+  .route-divider svg{width:100%; height:56px; display:block; overflow:visible;}
+  @media (max-width:900px){ .route-divider svg{height:40px;} }
+
+  /* ---------- MAP-DOT TEXTURE ---------- */
+  .band{position:relative; overflow:hidden;}
+  .band::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:radial-gradient(rgba(255,255,255,0.16) 1.4px, transparent 1.4px);
+    background-size:24px 24px;
+    pointer-events:none;
+  }
+  .band .wrap{position:relative; z-index:1;}
+
+  /* ---------- PASSPORT STAMP ---------- */
+  .stamp{
+    width:112px;
+    height:112px;
+    min-width:112px;
+    border:1.5px dashed var(--wine);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    transform:rotate(-9deg);
+    color:var(--wine);
+    flex:none;
+    padding:8px;
+  }
+  .stamp span{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:12px;
+    line-height:1.3;
+    letter-spacing:0.02em;
+  }
+  .stamp b{
+    display:block;
+    font-style:normal;
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:15px;
+    letter-spacing:0.03em;
+    margin-bottom:2px;
+  }
+  @media (max-width:900px){ .stamp{display:none;} }
+
+  /* ---------- AIRMAIL FRAME (postcard motif for the cover) ---------- */
+  .cover-frame{
+    position:relative;
+    padding:10px;
+    background:0px;
+    box-shadow:0 30px 60px -20px rgba(34,28,26,0.35);
+  }
+  .cover-frame img{position:relative; z-index:1;}
+  .postmark{
+    position:absolute;
+    top:-22px;
+    right:-22px;
+    width:88px;
+    height:88px;
+    background:var(--ivory);
+    border:1.5px dashed var(--wine);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transform:rotate(10deg);
+    z-index:2;
+    box-shadow:0 8px 18px rgba(34,28,26,0.18);
+  }
+  .postmark span{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    color:var(--wine);
+    font-size:11.5px;
+    text-align:center;
+    line-height:1.25;
+  }
+  .postmark b{display:block; font-style:normal; font-family:'Inter',sans-serif; font-size:14px; letter-spacing:0.04em;}
+  @media (max-width:900px){ .postmark{width:66px; height:66px; top:-14px; right:-14px;} .postmark span{font-size:9px;} .postmark b{font-size:11px;} }
+
+  /* ---------- EIFFEL WATERMARK ---------- */
+  .final{position:relative; overflow:hidden;}
+  .eiffel-watermark{
+    position:absolute;
+    right:-40px;
+    bottom:-30px;
+    width:380px;
+    opacity:0.055;
+    pointer-events:none;
+    z-index:0;
+  }
+  .final-wrap{position:relative; z-index:1;}
+
+  /* ---------- CHECK / CROSS LISTS ---------- */
+  .emoji-li{padding-left:0 !important;}
+  .emoji-li::before{content:none !important;}
+  .emoji{margin-right:9px;}
+
+  /* ---------- AIRPORT / MODE TAGS W/ EMOJI ---------- */
+  .tag.plain{font-family:'Inter', sans-serif; font-size:14px;}
+
+  .section-head{
+    max-width:640px;
+  }
+  .section-head h2{
+    font-size:clamp(30px,4vw,44px);
+    line-height:1.08;
+  }
+
+  .lede{
+    font-size:20px;
+    color:var(--ink-soft);
+    max-width:560px;
+    margin-top:22px;
+  }
+
+  /* ---------- INTRO / SAVED PLACES ---------- */
+  .intro-grid{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:80px;
+    align-items:center;
+  }
+  .intro-copy p{
+    margin:0 0 20px;
+    color:var(--ink-soft);
+    max-width:480px;
+  }
+  .intro-copy p.lead-line{
+    font-family:'Fraunces', serif;
+    font-size:26px;
+    font-style:italic;
+    color:var(--ink);
+    line-height:1.35;
+    margin-bottom:28px;
+  }
+  .place-list{
+    columns:2;
+    column-gap:28px;
+    list-style:none;
+    padding:0;
+    margin:28px 0 0;
+    font-family:'Fraunces', serif;
+    font-size:17px;
+    color:var(--ink);
+  }
+  .place-list li{
+    break-inside:avoid;
+    padding:9px 0;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    border-bottom:1px solid var(--paper-line);
+  }
+  .intro-photo{
+    position:relative;
+  }
+  .intro-photo img{
+    width:100%;
+    height:620px;
+    object-fit:cover;
+  }
+  .photo-cap{
+    font-size:13px;
+    color:var(--ink-soft);
+    margin-top:12px;
+    font-style:italic;
+    font-family:'Fraunces', serif;
+  }
+
+  /* ---------- STATEMENT BAND ---------- */
+  .band{
+    background:var(--wine);
+    color:var(--ivory);
+    padding:96px 0;
+  }
+  .band h2{
+    color:var(--ivory);
+    font-size:clamp(30px,4.2vw,50px);
+    max-width:820px;
+    line-height:1.15;
+  }
+  .band p{
+    max-width:600px;
+    margin-top:26px;
+    font-size:18px;
+    color:#EFDCD9;
+  }
+
+  /* ---------- WHAT IS IT ---------- */
+  .split{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:80px;
+    align-items:center;
+  }
+  .split.reverse .img-col{order:2;}
+  .split.reverse .text-col{order:1;}
+  .img-col img{
+    width:100%;
+    height:560px;
+    object-fit:cover;
+  }
+  .text-col p{
+    color:var(--ink-soft);
+    max-width:480px;
+    margin:0 0 18px;
+  }
+
+  /* ---------- FEATURE LIST W/ NUMBERS (real sequence: prep steps) ---------- */
+  .prep-block{
+    margin-top:44px;
+  }
+  .prep-cols{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:0 60px;
+  }
+  .prep-cols ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  .prep-cols li{
+    padding:14px 0;
+    display:flex;
+    align-items:center;
+    gap:11px;
+    border-bottom:1px solid var(--paper-line);
+    color:var(--ink-soft);
+    font-size:16px;
+  }
+  .prep-cols li:first-child{padding-top:0;}
+
+  /* ---------- AIRPORT / METRO STRIP ---------- */
+  .info-strip{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:start;
+  }
+  .info-strip .img-col img{height:520px;object-fit:cover;}
+  .tag-row{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin:24px 0 26px;
+  }
+  .tag{
+    border:1px solid var(--ink);
+    padding:8px 16px;
+    font-size:14.5px;
+    font-family:'Fraunces', serif;
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+  }
+
+  /* ---------- ITINERARY DAYS ---------- */
+  .days{
+    margin-top:60px;
+  }
+  .day-row{
+    display:grid;
+    grid-template-columns:120px 1fr;
+    gap:36px;
+    padding:38px 0;
+    border-top:1px solid var(--paper-line);
+  }
+  .day-row:last-child{border-bottom:1px solid var(--paper-line);}
+  .day-num{
+    font-family:'Fraunces', serif;
+    font-size:17px;
+    color:var(--wine);
+    font-style:italic;
+    padding-top:4px;
+    display:block;
+  }
+  .day-icon{
+    font-size:27px;
+    display:block;
+    margin-bottom:8px;
+    line-height:1;
+  }
+  .day-row h3{
+    font-size:25px;
+    margin-bottom:10px;
+  }
+  .day-row p{
+    color:var(--ink-soft);
+    max-width:640px;
+    margin:0;
+  }
+
+  .itinerary-photo{
+    margin-top:70px;
+    position:relative;
+  }
+  .itinerary-photo img{
+    width:100%;
+    height:460px;
+    object-fit:cover;
+    object-position:50% 30%;
+  }
+  .itinerary-photo .photo-cap{color:var(--ink-soft);}
+
+  /* ---------- EXTRA DAYS ---------- */
+  .extras-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:44px;
+    margin-top:56px;
+  }
+  .extra-card{
+    border-top:2px solid var(--wine);
+    padding-top:22px;
+  }
+  .extra-card .extra-icon{
+    font-size:30px;
+    display:block;
+    margin-bottom:14px;
+  }
+  .extra-card .extra-label{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    color:var(--wine);
+    font-size:15px;
+    display:block;
+    margin-bottom:10px;
+  }
+  .extra-card h3{
+    font-size:23px;
+    margin-bottom:12px;
+  }
+  .extra-card p{
+    color:var(--ink-soft);
+    font-size:15.5px;
+    margin:0;
+  }
+
+  /* ---------- MORE THAN SIGHTS ---------- */
+  .more-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:50px;
+    margin-top:56px;
+  }
+  .more-item .more-icon{
+    font-size:28px;
+    display:block;
+    margin-bottom:12px;
+  }
+  .more-item h3{
+    font-size:22px;
+    margin-bottom:14px;
+  }
+  .more-item p{
+    color:var(--ink-soft);
+    font-size:15.5px;
+    margin:0;
+  }
+
+  /* ---------- WHAT YOU RECEIVE ---------- */
+  .receive-wrap{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:70px;
+    align-items:flex-start;
+  }
+  .receive-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    columns:2;
+    column-gap:40px;
+  }
+  .receive-list li{
+    break-inside:avoid;
+    padding:13px 0;
+    display:flex;
+    align-items:flex-start;
+    gap:11px;
+    font-size:15.5px;
+    color:var(--ink-soft);
+    border-bottom:1px solid var(--paper-line);
+  }
+
+  /* ---------- FOR WHO / NOT FOR WHO ---------- */
+  .who-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+    margin-top:20px;
+    border:1px solid var(--paper-line);
+  }
+  .who-col{
+    padding:48px 44px;
+  }
+  .who-col.no{
+    background:var(--ivory-2);
+    border-left:1px solid var(--paper-line);
+  }
+  .who-col h3{
+    font-size:22px;
+    margin-bottom:22px;
+  }
+  .who-col ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  .who-col li{
+    padding:10px 0;
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    color:var(--ink-soft);
+    font-size:15.5px;
+    border-bottom:1px solid var(--paper-line);
+  }
+  .who-col li:last-child{border-bottom:none;}
+
+  /* ---------- ABOUT LAURA ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.8fr 1.2fr;
+    gap:70px;
+    align-items:center;
+  }
+  .about-grid img{
+    width:100%;
+    height:600px;
+    object-fit:cover;
+    object-position:50% 25%;
+  }
+  .signature{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:24px;
+    margin-top:28px;
+    color:var(--wine);
+  }
+
+  /* ---------- PRICE ---------- */
+  .price-band{
+    background:var(--ink);
+    color:var(--ivory);
+    padding:110px 0;
+  }
+  .price-band .eyebrow{color:#D9A9AE;}
+  .price-band h2{
+    color:var(--ivory);
+    font-size:clamp(28px,3.6vw,40px);
+    max-width:640px;
+    line-height:1.25;
+  }
+  .price-box{
+    margin-top:50px;
+    display:flex;
+    align-items:baseline;
+    gap:24px;
+    flex-wrap:wrap;
+  }
+  .price-figure{
+    font-family:'Fraunces', serif;
+    font-size:64px;
+    color:var(--ivory);
+  }
+  .price-note{
+    color:#C9BDB9;
+    font-size:15.5px;
+    max-width:280px;
+  }
+
+  /* ---------- DELIVERY / GUARANTEE ---------- */
+  .dg-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+  }
+  .dg-grid h3{
+    font-size:24px;
+    margin-bottom:16px;
+  }
+  .dg-grid p{
+    color:var(--ink-soft);
+    margin:0;
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq-item{
+    border-top:1px solid var(--paper-line);
+    padding:30px 0;
+  }
+  .faq-item:last-child{border-bottom:1px solid var(--paper-line);}
+  .faq-item h3{
+    font-size:19px;
+    font-weight:500;
+    margin-bottom:10px;
+  }
+  .faq-item p{
+    color:var(--ink-soft);
+    margin:0;
+    max-width:680px;
+  }
+
+  /* ---------- FINAL / COVER ---------- */
+  .final{
+    background:var(--ivory-2);
+    padding:120px 0 100px;
+  }
+  .final-wrap{
+    display:grid;
+    grid-template-columns:1fr 0.66fr;
+    gap:70px;
+    align-items:center;
+  }
+  .final h2{
+    font-size:clamp(32px,4.6vw,52px);
+    line-height:1.12;
+  }
+  .final p.lede{margin-top:24px;}
+  .cover-frame{
+    position:relative;
+    box-shadow:0 30px 60px -20px rgba(34,28,26,0.35);
+  }
+  .cover-frame img{width:100%; height:auto; display:block;}
+
+  footer{
+    padding:46px 0;
+    text-align:center;
+    font-size:13px;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 900px){
+    section{padding:70px 0;}
+    .intro-grid, .split, .info-strip, .receive-wrap, .about-grid, .final-wrap{
+      grid-template-columns:1fr;
+      gap:44px;
+    }
+    .split.reverse .img-col, .split.reverse .text-col{order:initial;}
+    .intro-photo img, .img-col img, .about-grid img{height:380px;}
+    .prep-cols, .extras-grid, .more-grid{
+      grid-template-columns:1fr;
+      gap:28px;
+    }
+    .who-grid{grid-template-columns:1fr;}
+    .who-col.no{border-left:none; border-top:1px solid var(--paper-line);}
+    .day-row{grid-template-columns:70px 1fr; gap:20px;}
+    .place-list{columns:1;}
+    .receive-list{columns:1;}
+    .final-wrap{grid-template-columns:1fr;}
+    .cover-frame{max-width:320px; margin:0 auto;}
+    .hero h1{font-size:clamp(38px,10vw,60px);}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="https://i.imgur.com/CybCaor.jpeg" alt="Laura em frente à Torre Eiffel, em uma rua de Paris" class="centralizada">
+  <div class="hero-content">
+    <div class="hero-inner">
+      <span class="kicker"><svg class="ico" viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M14.5 1.5 1 7.2l4.7 1.6M14.5 1.5 9.6 15l-2.4-5.2M14.5 1.5 5.6 9.9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg> Um guia digital, feito à mão, para brasileiros...</span>
+      <h1>A Rota Gênia<br>em Paris</h1>
+      <p class="hero-sub">Você pode passar meses tentando encaixar sua viagem. Ou receber uma rota criada para fazer Paris caber nos seus dias.<br><br>Descubra <b>como organizar uma viagem completa pela Cidade Luz</b>, com atrações agrupadas por região, orientações de transporte, restaurantes, hospedagens, ingressos e roteiros para aproveitar Paris sem passar o dia inteiro correndo de um lugar para outro.<br><br><b>Mais de 120 páginas para ajudar você antes, durante e depois do embarque.</b>
+</p>
+      <div class="btn-row">
+        <a href="#preco" class="btn">👉 Quero receber meu guia!️</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="route-divider" aria-hidden="true" style="background:var(--ivory);">
+  <div class="wrap">
+    <svg viewBox="0 0 1160 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="16" cy="46" r="4.5" fill="#7B2431"></circle>
+      <path d="M24,44 C 260,8 460,74 700,30 C 840,4 960,36 1116,14" fill="none" stroke="#7B2431" stroke-width="1.6" stroke-dasharray="1 9" stroke-linecap="round"></path>
+      <g transform="translate(1102,4) rotate(-14)">
+        <path d="M0 7 L22 0 L15 7 L22 14 Z" fill="#7B2431"></path>
+      </g>
+    </svg>
+  </div>
+</div>
+
+<!-- INTRO: SAVED PLACES -->
+<section>
+  <div class="wrap intro-grid">
+    <div class="intro-copy">
+      <span class="eyebrow"><svg class="ico" viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M14.5 1.5 1 7.2l4.7 1.6M14.5 1.5 9.6 15l-2.4-5.2M14.5 1.5 5.6 9.9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>O ponto de partida!</span>
+      <p class="lead-line">Você já salvou tantos lugares em Paris que dava para passar um mês inteiro só visitando os favoritos...</p>
+      <p>A Torre Eiffel iluminada. As obras do Louvre. Os jardins de Versalhes. As ruas em ladeira de Montmartre. Os cafés de Saint-Germain. As margens do Sena ao entardecer. Os cenários de Emily in Paris.</p>
+      <p><b>A lista não para de crescer!</b> Mas a sua viagem tem só alguns dias... E é aí que mora a parte mais difícil: descobrir quais atrações ficam pertinho umas das outras, o que cabe num mesmo dia, o que precisa de ingresso comprado com antecedência.</p>
+      <p>Pesquisar cada uma dessas respostas leva tempo. E quando as informações estão espalhadas entre vídeos, posts salvos, mapas e uma dúzia de abas abertas, montar o roteiro vira uma das partes mais cansativas da viagem ao invés de uma das mais incríveis.</p>
+      <p><b>É comum que você tenha dúvidas como...</b></p>
+      <ul class="place-list">
+        <li><span class="emoji">📍</span> Quais atrações ficam próximas?</li>
+        <li><span class="emoji">🗓️</span> O que fazer no mesmo dia?</li>
+        <li><span class="emoji">🎟️</span> Qual ingresso comprar antes?</li>
+        <li><span class="emoji">⏱️</span> Quanto tempo reservar por região?</li>
+        <li><span class="emoji">🚇</span> Como usar o metrô sem errar o sentido?</li>
+        <li><span class="emoji">✈️</span> Em qual aeroporto chegar?</li>
+      </ul>
+    <p class="lead-line"><br>Foi para facilitar esse planejamento que nasceu <b>A Rota Gênia em Paris.</b></p>
+    </div>
+    <div>
+      <div class="intro-photo">
+        <img src="https://i.imgur.com/ClSA9Bm.png" alt="Laura em frente à Torre Eiffel, vista do Trocadéro">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STATEMENT BAND -->
+<section class="band">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#EFDCD9;"><svg class="ico" viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M14.5 1.5 1 7.2l4.7 1.6M14.5 1.5 9.6 15l-2.4-5.2M14.5 1.5 5.6 9.9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Paris é grande demais para ser conhecida sem uma rota!</span>
+    <h2>Paris reúne dezenas de museus, monumentos, bairros, restaurantes, mirantes, parques e experiências. A maior dificuldade nunca é encontrar o que fazer, mas sim descobrir como encaixar tudo isso.</h2>
+    <p>Sem pensar na localização de cada atração, dá para atravessar a cidade de ponta a ponta várias vezes no mesmo dia, perder horas em deslocamentos desnecessários, ou chegar a um monumento bem no único dia em que ele está fechado.</p>
+    <p>Com uma <b>rota bem desenhada</b>, você aproveita melhor cada região e ainda sobra tempo para viver Paris além dos pontos turísticos.</p>
+    <div class="btn-row">
+      <a href="#preco" class="btn light">👉 Quero organizar minha viagem!</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IS IT -->
+<section>
+  <div class="wrap split">
+    <div class="img-col">
+      <img src="https://i.imgur.com/GhnuIu0.jpeg" alt="Laura em frente à pirâmide do Louvre, em Paris">
+    </div>
+    <div class="text-col">
+      <span class="eyebrow"><svg class="ico" viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M14.5 1.5 1 7.2l4.7 1.6M14.5 1.5 9.6 15l-2.4-5.2M14.5 1.5 5.6 9.9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>E você pode estar se perguntando agora...</span>
+      <h2 style="font-size:clamp(28px,3.6vw,38px); margin-bottom:22px;">"Mas o que é A Rota Gênia em Paris?"</h2>
+      <p>É um guia digital com <b>mais de 120 páginas</b>, feito especialmente para brasileiros que vão viver a primeira viagem à capital francesa.</p>
+      <p><b>Você vai receber orientações para se preparar antes do embarque</b>, entender como a cidade funciona de verdade e seguir roteiros organizados por regiões próximas. Ou seja, nada de atravessar Paris de um lado a outro sem entender por onde vai e o que fazer em cada dia!</p>
+      <p><b>Não é apenas uma lista de lugares para conhecer.</b> É um material que explica como combinar atrações, onde fazer pausas para respirar, quais experiências pedem atenção redobrada e como adaptar cada dia ao seu próprio ritmo.</p>
+      <p>Você pode acessar o guia pelo celular, tablet ou computador, <b>durante todo o seu planejamento e até mesmo quando já estiver na cidade.</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE THE TRIP -->
+<section class="tight" style="background:var(--ivory-2);">
+  <div class="wrap">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:40px; flex-wrap:wrap;">
+      <div class="section-head">
+        <span class="eyebrow"><svg class="ico" viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M14.5 1.5 1 7.2l4.7 1.6M14.5 1.5 9.6 15l-2.4-5.2M14.5 1.5 5.6 9.9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Antes do embarque...</span>
+        <h2>Sua viagem começa bem antes da Torre Eiffel!</h2>
+        <p class="lede">Antes de apresentar os roteiros, o guia prepara você para as primeiras decisões da viagem. Você vai encontrar orientações sobre...</p>
+      </div>
+      <div class="stamp">
+        <span><b>ENTRÉE</b>passaporte<br>em dia</span>
+      </div>
+    </div>
+    <div class="prep-block prep-cols">
+      <ul>
+        <li><span class="emoji">📄</span> Documentos necessários</li>
+        <li><span class="emoji">🛂</span> Imigração e perguntas na chegada</li>
+        <li><span class="emoji">🧾</span> Organização dos comprovantes</li>
+        <li><span class="emoji">🧳</span> Retirada das malas</li>
+        <li><span class="emoji">📶</span> Conexão com a internet</li>
+      </ul>
+      <ul>
+        <li><span class="emoji">🚕</span> Transporte entre aeroporto e hospedagem</li>
+        <li><span class="emoji">🏨</span> Check-in e guarda-volumes</li>
+        <li><span class="emoji">💶</span> Taxa de hospedagem</li>
+        <li><span class="emoji">📍</span> Escolha da região onde ficar</li>
+        <li><span class="emoji">🎫</span> Compra antecipada de ingressos</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- AIRPORTS -->
+<section>
+  <div class="wrap info-strip">
+    <div>
+      <span class="eyebrow"><svg class="ico" viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M14.5 1.5 1 7.2l4.7 1.6M14.5 1.5 9.6 15l-2.4-5.2M14.5 1.5 5.6 9.9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Charles de Gaulle, Orly ou Beauvais: qual aeroporto escolher?</span>
+      <h2 style="font-size:clamp(26px,3.4vw,34px); margin-bottom:20px;">Nem todo aeroporto que aparece como "Paris" está perto do centro!</h2>
+      <div class="tag-row" style="margin-bottom:20px;">
+        <span class="tag">✈️ Charles de Gaulle</span>
+        <span class="tag">✈️ Orly</span>
+        <span class="tag">✈️ Beauvais</span>
+      </div>
+      <p style="color:var(--ink-soft); max-width:460px;">Dentro do guia, você entende as diferenças entre os três e como a distância até o centro, o horário de chegada, o transporte e a região da hospedagem podem transformar uma passagem aparentemente mais barata em uma escolha bem pouco vantajosa.</p>
+      <p style="color:var(--ink-soft); max-width:460px;">Também vai encontrar orientações para decidir entre...</p>
+      <div class="tag-row">
+        <span class="tag">🚆 Trem</span>
+        <span class="tag">🚌 Ônibus</span>
+        <span class="tag">🚕 Táxi</span>
+        <span class="tag">📲 Uber</span>
+        <span class="tag">📲 Bolt</span>
+        <span class="tag">🚘 Transfer</span>
+      </div>
+    </div>
+    <div>
+      <span class="eyebrow"><svg class="ico" viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M14.5 1.5 1 7.2l4.7 1.6M14.5 1.5 9.6 15l-2.4-5.2M14.5 1.5 5.6 9.9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>O metrô de Paris</span>
+      <h2 style="font-size:clamp(26px,3.4vw,34px); margin-bottom:20px;">Um guia para você não se perder!</h2>
+      <div class="tag-row" style="margin-bottom:20px;">
+        <span class="tag">🚇 Metrô</span>
+        <span class="tag">🚈 RER</span>
+        <span class="tag">🚌 Ônibus</span>
+        <span class="tag">🚋 Bonde</span>
+      </div>
+      <p style="color:var(--ink-soft); max-width:460px;">O metrô é a <b>forma mais rápida e mais econômica de circular pela cidade</b>, desde que você saiba identificar a linha, o sentido e a estação certa. Por isso, este guia explica...</p>
+          <ul class="receive-list">
+      <li><span class="emoji">✅</span> As diferenças entre metrô, RER, ônibus e bonde.</li>
+      <li><span class="emoji">✅</span> Os cartões e passes de transporte.</li>
+      <li><span class="emoji">✅</span> Como identificar o sentido da linha.
+</li>
+      <li><span class="emoji">✅</span> Como fazer uma baldeação.</li>
+      <li><span class="emoji">✅</span> Como encontrar a saída correta.</li>
+      <li><span class="emoji">✅</span> Quais linhas levam às principais atrações.
+</li>
+      <li><span class="emoji">✅</span> Como chegar à Disneyland Paris e a Versalhes.</li>
+      <li><span class="emoji">✅</span> Cuidados com malas, escadas e estações movimentadas.</li>
+      <li><span class="emoji">✅</span> Como conferir alterações e interrupções no serviço.</li>
+    </ul>
+      <p style="color:var(--ink-soft); max-width:460px; margin-top:14px;">Você ainda recebe as estações mais próximas da Torre Eiffel, Louvre, Notre-Dame, Montmartre, Ópera Garnier, Museu d'Orsay, Versalhes, Disneyland Paris e outras atrações.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ITINERARY -->
+<section style="background:var(--ivory-2);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><svg class="ico" viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M14.5 1.5 1 7.2l4.7 1.6M14.5 1.5 9.6 15l-2.4-5.2M14.5 1.5 5.6 9.9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Finalmente os roteiros!</span>
+      <h2>Mais de 7 dias para conhecer diferentes versões de Paris!</h2>
+      <p class="lede">Cada roteiro foi pensado como uma sequência: onde começar, por qual região continuar e qual cenário escolher para encerrar o dia.</p>
+    </div>
+
+    <div class="days">
+      <div class="day-row">
+        <div><span class="day-icon">🗼</span><span class="day-num">Dia 1</span></div>
+        <div>
+          <h3>O primeiro encontro com Paris</h3>
+          <p>A viagem começa diante da imagem que provavelmente fez você sonhar com a cidade. Você vai descobrir diferentes perspectivas da Torre Eiffel, caminhar por cenários perfeitos para fotografias e terminar o dia vendo Paris ganhar sua iluminação noturna.</p>
+        </div>
+      </div>
+      <div class="day-row">
+        <div><span class="day-icon">🏛️</span><span class="day-num">Dia 2</span></div>
+        <div>
+          <h3>Uma caminhada pela história</h3>
+          <p>Depois de conhecer algumas das obras mais famosas do mundo, você segue por um dos caminhos históricos mais importantes de Paris. Jardins, palácios, avenidas e monumentos se conectam até uma das vistas mais desejadas da cidade.</p>
+        </div>
+      </div>
+      <div class="day-row">
+        <div><span class="day-icon">🎨</span><span class="day-num">Dia 3</span></div>
+        <div>
+          <h3>Da Paris intelectual à Paris boêmia</h3>
+          <p>O dia começa entre monumentos, igrejas e jardins ligados à história intelectual francesa. Depois, ruas em ladeira, antigos moinhos, cafés de cinema e a atmosfera artística de Montmartre conduzem você a uma noite que pode terminar em um dos espetáculos mais famosos de Paris.</p>
+        </div>
+      </div>
+      <div class="day-row">
+        <div><span class="day-icon">🌇</span><span class="day-num">Dia 4</span></div>
+        <div>
+          <h3>Arte, cafés e margens do Sena</h3>
+          <p>Você começa dentro de uma antiga estação ferroviária transformada em museu e segue por uma região marcada por livrarias, cafés históricos e ruas elegantes. Para encerrar, um dos cenários mais bonitos da cidade para ver o sol se pôr sobre o Sena.</p>
+        </div>
+      </div>
+      <div class="day-row">
+        <div><span class="day-icon">👑</span><span class="day-num">Dia 5</span></div>
+        <div>
+          <h3>Da realeza às ruas do Marais</h3>
+          <p>Pela manhã, você atravessa os antigos salões da monarquia francesa e conhece jardins criados para impressionar o mundo. De volta a Paris, o roteiro muda de ritmo e leva você a um bairro repleto de ruas históricas, brechós, lojinhas e descobertas que não dependem de horário marcado.</p>
+        </div>
+      </div>
+      <div class="day-row">
+        <div><span class="day-icon">🛍️</span><span class="day-num">Dia 6</span></div>
+        <div>
+          <h3>Uma despedida à altura da viagem</h3>
+          <p>O último roteiro começa no lugar onde Paris nasceu, atravessa alguns dos interiores mais impressionantes da cidade e termina entre arquitetura, compras e vistas panorâmicas. Uma despedida planejada para fazer você olhar de novo para Paris, agora com a sensação de realmente ter conhecido a cidade.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="itinerary-photo">
+      <img src="https://i.imgur.com/gfKUwzv.jpeg" alt="Laura nos jardins do Palácio de Versalhes">
+      <p class="photo-cap">Em cada dia, o guia revela a ordem sugerida, os pontos de atenção, as estações mais próximas, as opções para comer e as experiências que você poderá adaptar ao seu ritmo.</p>
+    </div>
+
+    <div class="btn-row">
+      <a href="#preco" class="btn">👉 Quero conhecer os roteiros!</a>
+    </div>
+  </div>
+</section>
+
+<div class="route-divider" aria-hidden="true" style="background:var(--ivory-2);">
+  <div class="wrap">
+    <svg viewBox="0 0 1160 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="16" cy="14" r="4.5" fill="#7B2431"></circle>
+      <path d="M24,16 C 260,52 460,-4 700,32 C 840,56 960,26 1116,46" fill="none" stroke="#7B2431" stroke-width="1.6" stroke-dasharray="1 9" stroke-linecap="round"></path>
+      <g transform="translate(1102,38) rotate(14)">
+        <path d="M0 7 L22 0 L15 7 L22 14 Z" fill="#7B2431"></path>
+      </g>
+    </svg>
+  </div>
+</div>
+
+<!-- DIA ZERO -->
+<section class="tight">
+  <div class="wrap split reverse">
+    <div class="img-col">
+      <img src="https://i.imgur.com/oNXV7AG.jpeg" alt="Laura no interior da Ópera Garnier, em Paris">
+    </div>
+    <div class="text-col">
+      <span class="eyebrow">"E se eu desembarcar na metade do primeiro dia? Como aproveitar o roteiro inteiro?"</span>
+      <h2 style="font-size:clamp(26px,3.4vw,34px); margin-bottom:20px;">O Dia Zero existe para isso!</h2>
+      <p>No guia, o dia da chegada é tratado como <b>Dia Zero</b>, porque <b>cada pessoa pousa em Paris em um horário diferente</b>. Você aprende como usar esse período para descansar, explorar o bairro da hospedagem, adiantar uma atração, fazer um passeio mais leve, conhecer um restaurante ou adiantar as atrações do turno da tarde dos outros dias para otimizar seu tempo.</p>
+      <p><b>O roteiro começa oficialmente no primeiro dia completo em Paris, sem depender do horário do seu voo.</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- EXTRA DAYS -->
+<section style="background:var(--ivory-2);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><svg class="ico" viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M14.5 1.5 1 7.2l4.7 1.6M14.5 1.5 9.6 15l-2.4-5.2M14.5 1.5 5.6 9.9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg> Além da programação principal...</span>
+      <h2>Você também recebe 3 dias extras</h2>
+      <p class="lede">Quer esticar a viagem ou trocar uma parte do roteiro? O guia traz três possibilidades além da programação principal.</p>
+    </div>
+    <div class="extras-grid">
+      <div class="extra-card">
+        <span class="extra-icon">🏰</span>
+        <span class="extra-label">Dia extra 1</span>
+        <h3>Disneyland Paris</h3>
+        <p>Orientações para conhecer o Disneyland Park e o Disney Adventure World, com transporte, funcionamento e organização da visita.</p>
+      </div>
+      <div class="extra-card">
+        <span class="extra-icon">🏘️ </span>
+        <span class="extra-label">Dia extra 2</span>
+        <h3>Colmar</h3>
+        <p>Uma sugestão para conhecer a cidade alsaciana famosa pelas casinhas coloridas, canais e atmosfera de conto de fadas.</p>
+      </div>
+      <div class="extra-card">
+        <span class="extra-icon">🌻</span>
+        <span class="extra-label">Dia extra 3</span>
+        <h3>Giverny</h3>
+        <p>Uma viagem até a casa e os jardins de Claude Monet - especialmente linda para quem se encantou com as obras dele no Museu d'Orsay.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MORE THAN SIGHTS -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><svg class="ico" viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M14.5 1.5 1 7.2l4.7 1.6M14.5 1.5 9.6 15l-2.4-5.2M14.5 1.5 5.6 9.9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Além dos pontos turísticos...</span>
+      <h2>Onde comer, como se comunicar e o que procurar</h2>
+      <p class="lede">Para aproveitar Paris de verdade, também é preciso saber onde comer bem, como se virar em francês e onde encontrar aquilo que todo viajante procura.</p>
+    </div>
+    <div class="more-grid">
+      <div class="more-item">
+        <span class="more-icon">🍽️</span>
+        <h3>Restaurantes por região</h3>
+        <p>Sugestões gastronômicas próximas aos pontos turísticos, para que você consiga ter experiências diferentes durante as refeições e nas possíveis pausas do roteiro.</p>
+      </div>
+      <div class="more-item">
+        <span class="more-icon">📚</span>
+        <h3>Francês essencial</h3>
+        <p>Frases para restaurantes, padarias, cafeterias, lojas, museus, estações e imprevistos, os pequenos "perrengues chiques" da viagem. Você não precisa falar francês fluentemente. Mas saber cumprimentar, pedir informação e fazer pedidos simples pode tornar a experiência muito mais tranquila.</p>
+      </div>
+      <div class="more-item">
+        <span class="more-icon">🛍️</span>
+        <h3>Lojas e mercados</h3>
+        <p>Lojas procuradas pelos turistas e redes de mercados úteis para economizar com cafés da manhã, lanches, chocolates, vinhos, cosméticos e lembranças.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU RECEIVE -->
+<section style="background:var(--ivory-2);">
+  <div class="wrap receive-wrap">
+    <div class="section-head">
+      <span class="eyebrow"><svg class="ico" viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M14.5 1.5 1 7.2l4.7 1.6M14.5 1.5 9.6 15l-2.4-5.2M14.5 1.5 5.6 9.9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>O material completo!</span>
+      <h2>Você vai receber...</h2>
+<p>Tudo reunido em um único material para você não depender de dezenas de publicações salvas e pesquisas espalhadas.</p>
+    </div>
+    <ul class="receive-list">
+      <li><span class="emoji">✅</span> Um e-book digital com mais de 120 páginas.</li>
+      <li><span class="emoji">✅</span> Mais de sete dias de roteiro em Paris.</li>
+      <li><span class="emoji">✅</span> Sugestões de dias extras.</li>
+      <li><span class="emoji">✅</span> Orientações sobre documentos e imigração.</li>
+      <li><span class="emoji">✅</span> Comparação entre os aeroportos de Paris.</li>
+      <li><span class="emoji">✅</span> Guia de metrô, RER e outros transportes.</li>
+      <li><span class="emoji">✅</span> Recomendações de regiões e hospedagens.</li>
+      <li><span class="emoji">✅</span> Checklists resumidos dos roteiros.</li>
+      <li><span class="emoji">✅</span> Restaurantes organizados por região.</li>
+      <li><span class="emoji">✅</span> Sugestões de lojas e supermercados.</li>
+      <li><span class="emoji">✅</span> Francês essencial para a viagem.</li>
+      <li><span class="emoji">✅</span> Bônus com cenários de Emily in Paris.</li>
+      <li><span class="emoji">✅</span> Links para hospedagens, ingressos e passeios.</li>
+    </ul>
+ 
+  </div>
+</section>
+
+<!-- FOR WHO -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><svg class="ico" viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M14.5 1.5 1 7.2l4.7 1.6M14.5 1.5 9.6 15l-2.4-5.2M14.5 1.5 5.6 9.9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Uma pergunta importante...</span>
+      <h2>Para quem é este guia?</h2>
+    </div>
+    <div class="who-grid">
+      <div class="who-col yes">
+        <h3>Este guia é para você que...</h3>
+        <ul>
+          <li><span class="emoji">✅</span> Vai conhecer Paris pela primeira vez.</li>
+          <li><span class="emoji">✅</span> Sente dificuldade para organizar as atrações.</li>
+          <li><span class="emoji">✅</span> Tem pouco tempo disponível.</li>
+          <li><span class="emoji">✅</span> Quer evitar deslocamentos desnecessários.</li>
+          <li><span class="emoji">✅</span> Tem receio de se perder no metrô.</li>
+          <li><span class="emoji">✅</span> Quer equilibrar turismo, gastronomia e caminhadas.</li>
+          <li><span class="emoji">✅</span> Gosta de viajar com orientação, mas com liberdade.</li>
+        </ul>
+      </div>
+      <div class="who-col no">
+        <h3>Este material não foi feito para...</h3>
+        <ul>
+          <li><span class="emoji">🚫</span> Quem espera um roteiro individual, desenhado a partir dos próprios voos, hospedagem e orçamento.</li>
+          <li><span class="emoji">🚫</span> Quem busca algo além de uma rota completa e adaptável a diferentes viajantes.</li>
+          <li><span class="emoji">🚫</span> Quem já sabe que quer uma programação exclusiva. Nesse caso, existe o serviço de roteiro personalizado da Rota Gênia, contratado à parte.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT LAURA -->
+<section style="background:var(--ivory-2);">
+  <div class="wrap about-grid">
+    <div>
+      <img src="https://i.imgur.com/cSRzXtj.jpeg" alt="Laura Lima às margens do Sena, com a Torre Eiffel iluminada ao fundo">
+    </div>
+    <div>
+      <span class="eyebrow"><svg class="ico" viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M14.5 1.5 1 7.2l4.7 1.6M14.5 1.5 9.6 15l-2.4-5.2M14.5 1.5 5.6 9.9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Quem está por trás da Rota Gênia?</span>
+      <p style="color:var(--ink-soft); max-width:480px; margin:0 0 16px;"><b>Eu sou a Laura, publicitária, criadora de conteúdo e apaixonada por viajar.</b> Durante muitos anos, o mundo foi algo que eu só conseguia conhecer pelas telas, pelos livros e pelas histórias de outras pessoas.</p>
+      <p style="color:var(--ink-soft); max-width:480px; margin:0 0 16px;">Enquanto estudava e trabalhava, comecei a me organizar financeiramente para transformar esses lugares em viagens de verdade, começando pela Disney e seguindo pela Europa. Paris chegou logo depois e abriu portas que eu nem sabia que existiam.</p>
+      <p style="color:var(--ink-soft); max-width:480px; margin:0;">A Rota Gênia nasceu quando percebi que eu não queria só consumir conteúdo de viagem. <b>Queria compartilhar o que aprendi e ajudar outras pessoas a transformar lugares salvos em experiências vividas. Este guia reúne a Paris que conheci, estudei e organizei para que você possa aproveitar melhor cada um dos seus dias. </b></p>
+      <p class="signature">@rotagenia</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section class="price-band" id="preco">
+  <div class="wrap">
+    <span class="eyebrow">Depois de tudo o que já mostrei...</span>
+    <h2>Quanto vale NÃO PRECISAR organizar tudo sozinho?</h2>
+    <p>Pense em quantas horas seriam necessárias para pesquisar cada aeroporto, cada linha de metrô, cada região, cada atração, os ingressos e a melhor forma de combinar tudo isso.</p>
+    <div class="price-box">
+      <span class="price-figure">De <strike>R$119,97</strike> para R$69,97!</span>
+      <p>Com <b>o valor de uma única refeição</b> (em um restaurante econômico) em Paris, você consegue <b>um guia para salvar toda a sua viagem</b>. É pegar ou largar! 😉</p>
+    </div>
+    <div class="btn-row">
+      <a href="#" class="btn light">👉 Quero garantir meu desconto!</a>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERY / GUARANTEE -->
+<section class="tight">
+  <div class="wrap dg-grid">
+    <div>
+      <h3>Como você receberá o material</h3>
+      <p>Depois da confirmação do pagamento, você recebe acesso ao e-book digital A Rota Gênia em Paris. O material pode ser consultado pelo celular, tablet ou computador, durante o planejamento e ao longo da viagem. A entrega é digital. Nenhum produto físico será enviado.</p>
+    </div>
+    <div>
+      <h3>Garantia de 7 dias</h3>
+      <p>Você terá 7 dias para conhecer o material. Se, dentro desse período, entender que o e-book não corresponde ao que foi apresentado nesta página, poderá solicitar o reembolso de acordo com as regras informadas no momento da compra.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:var(--ivory-2);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Perguntas frequentes...</span>
+      <h2>A dúvida de um pode ser a dos outros!</h2>
+    </div>
+    <div style="margin-top:40px;">
+      <div class="faq-item">
+        <h3>O e-book serve para quem nunca viajou para fora do Brasil?</h3>
+        <p>Sim. O material foi criado especialmente para ajudar quem ainda possui dúvidas sobre documentos, imigração, aeroportos, transporte, hospedagem e organização dos passeios.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Preciso seguir os dias exatamente?</h3>
+        <p>Não. Você pode seguir o roteiro completo, selecionar apenas alguns dias, retirar atrações ou adaptar a programação conforme o tempo disponível.</p>
+      </div>
+      <div class="faq-item">
+        <h3>O dia da chegada conta como o primeiro dia?</h3>
+        <p>Não. O roteiro considera o Dia 1 como o primeiro dia completo em Paris. O dia da chegada é tratado como Dia Zero e pode ser usado para descansar ou antecipar uma experiência mais leve.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Preciso falar francês?</h3>
+        <p>Não. Em regiões turísticas, hotéis e atrações é possível utilizar o inglês. O guia também inclui frases essenciais em francês para facilitar situações comuns.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Os ingressos estão incluídos?</h3>
+        <p>Não. O e-book apresenta orientações e links para compra, mas ingressos, hospedagens, refeições, transportes e demais serviços devem ser contratados separadamente.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Os preços e horários podem mudar?</h3>
+        <p>Sim. Atrações, empresas e serviços podem alterar valores e horários. Por isso, confirme as informações nos links indicados antes da visita.</p>
+      </div>
+      <div class="faq-item">
+        <h3>O e-book funciona sem internet?</h3>
+        <p>Você pode baixar o arquivo no seu dispositivo para consultá-lo offline. No entanto, links externos, apps de navegação e páginas de reserva exigem conexão.</p>
+      </div>
+      <div class="faq-item">
+        <h3>O guia substitui um roteiro personalizado?</h3>
+        <p>Não. O e-book apresenta uma rota ampla e adaptável. O roteiro personalizado considera especificamente seus voos, hospedagem, ritmo, orçamento e interesses.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Posso compartilhar o e-book?</h3>
+        <p>Não. A compra concede uma licença de uso pessoal. O compartilhamento, a reprodução ou a comercialização do conteúdo não são permitidos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL / COVER -->
+<section class="final">
+  <div class="wrap final-wrap">
+    <div>
+      <span class="eyebrow">Paris pode ser intensa. O seu planejamento não precisa ser.</span>
+      <h2>O seu sonho já tem destino. Agora ele também pode ter uma rota.</h2>
+      <p class="lede">Você não precisa continuar alternando entre mapas, vídeos, planilhas e centenas de publicações salvas para descobrir o que cabe na sua viagem. <b>A Rota Gênia em Paris</b> reúne o essencial para você sair do aeroporto, entender a cidade e aproveitar cada região com mais tranquilidade.</p>
+      <div class="btn-row">
+        <a href="#" class="btn">👉 Quero meu e-book!</a>
+      </div>
+    </div>
+    <div class="cover-frame">
+      <img src="https://i.imgur.com/xOoM6Dl.png" alt="Capa do e-book A Rota Gênia em Paris, por Laura Lima">
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Rota Gênia. Todos os direitos reservados.<br>
+  É proibida a reprodução, distribuição, cópia, compartilhamento ou comercialização, total ou parcial, deste conteúdo sem autorização prévia.
+</footer>
+
+</body>
+</html>
